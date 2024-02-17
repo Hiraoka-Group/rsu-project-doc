@@ -1,0 +1,737 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>analyze_rsu &#8212; RSU Project  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=db01d323" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'rsuanalyzer/analyze_rsu';</script>
+    <link rel="icon" href="../_static/favicon.svg"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="enum_ring_ids" href="enum_ring_ids.html" />
+    <link rel="prev" title="core" href="core.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.svg" class="logo__image only-light" alt="RSU Project  documentation - Home"/>
+    <script>document.write(`<img src="../_static/logo.svg" class="logo__image only-dark" alt="RSU Project  documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../reprod.html">
+                        Reproducing the Results
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../rsuanalyzer.html">
+                        Using the RSU Analyzer
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../reprod.html">
+                        Reproducing the Results
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../rsuanalyzer.html">
+                        Using the RSU Analyzer
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="instruction.html">General instruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="modules.html">Modules</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="core.html">core</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">analyze_rsu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enum_ring_ids.html">enum_ring_ids</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualize_chain.html">visualize_chain</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../rsuanalyzer.html" class="nav-link">Using the RSU Analyzer</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="modules.html" class="nav-link">Modules</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">analyze_rsu</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-rsuanalyzer.analyze_rsu">
+<span id="analyze-rsu"></span><h1>analyze_rsu<a class="headerlink" href="#module-rsuanalyzer.analyze_rsu" title="Link to this heading">#</a></h1>
+<section id="module-rsuanalyzer.analyze_rsu.calc_min_rsu_vs_theta">
+<span id="calc-min-rsu-vs-theta"></span><h2>calc_min_rsu_vs_theta<a class="headerlink" href="#module-rsuanalyzer.analyze_rsu.calc_min_rsu_vs_theta" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="rsuanalyzer.analyze_rsu.calc_min_rsu_vs_theta.create_min_rsu_vs_theta_df">
+<span class="sig-prename descclassname"><span class="pre">rsuanalyzer.analyze_rsu.calc_min_rsu_vs_theta.</span></span><span class="sig-name descname"><span class="pre">create_min_rsu_vs_theta_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ring_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thetas</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">range(0,</span> <span class="pre">91)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta_</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">87</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#rsuanalyzer.analyze_rsu.calc_min_rsu_vs_theta.create_min_rsu_vs_theta_df" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the minimum RSU in the given rings for each theta.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ring_ids</strong> (<em>Iterable</em><em>[</em><em>str</em><em>]</em>) – <p>The list of conformation IDs of rings,
+e.g. <code class="docutils literal notranslate"><span class="pre">[&quot;RRFFRRFF&quot;,</span> <span class="pre">&quot;RLFFRLFF&quot;,</span> <span class="pre">&quot;RRFFLLBB&quot;]</span></code>.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>You can get the list of all conformation IDs of rings
+by using the function <a class="reference internal" href="enum_ring_ids.html#rsuanalyzer.enum_ring_ids.enum_ring_ids.enum_ring_ids" title="rsuanalyzer.enum_ring_ids.enum_ring_ids.enum_ring_ids"><code class="xref py py-func docutils literal notranslate"><span class="pre">enum_ring_ids</span></code></a>.</p>
+</div>
+</p></li>
+<li><p><strong>thetas</strong> (<em>Iterable</em><em>[</em><em>float</em><em>]</em><em>, </em><em>optional</em>) – The list of tilt angles of C-C bonds. (unit: degree)
+0 &lt;= theta &lt;= 90. Default is <code class="docutils literal notranslate"><span class="pre">range(0,</span> <span class="pre">91,</span> <span class="pre">1)</span></code>.</p></li>
+<li><p><strong>delta</strong> (<em>float</em><em>, </em><em>optional</em>) – N-Pd-N angle. (unit: degree) 0 &lt; delta_ &lt;= 180.
+Default is 87.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A pandas DataFrame containing the minimum RSU for each theta.
+The columns are “theta”, “Ring ID”, and “RSU”.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<dl>
+<dt>Case 1:</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">rsuanalyzer</span> <span class="k">as</span> <span class="nn">ra</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ra</span><span class="o">.</span><span class="n">create_min_rsu_vs_theta_df</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="s2">&quot;RRFFRRFF&quot;</span><span class="p">,</span> <span class="s2">&quot;RLFFRLBB&quot;</span><span class="p">,</span> <span class="s2">&quot;RRFBRRFB&quot;</span><span class="p">],</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># The result will be:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#    theta   Ring ID       RSU</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 0      0  RRFBRRFB  1.032532</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 1     10  RLFFRLBB  1.032532</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 2     20  RLFFRLBB  1.032532</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 3     30  RLFFRLBB  1.032532</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 4     40  RRFFRRFF  0.914018</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 5     50  RRFFRRFF  0.783468</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 6     60  RRFFRRFF  0.652789</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 7     70  RRFFRRFF  0.532255</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 8     80  RRFFRRFF  0.440357</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 9     90  RRFFRRFF  0.404339</span>
+</pre></div>
+</div>
+</dd>
+<dt>Case 2: Using the function <a class="reference internal" href="enum_ring_ids.html#rsuanalyzer.enum_ring_ids.enum_ring_ids.enum_ring_ids" title="rsuanalyzer.enum_ring_ids.enum_ring_ids.enum_ring_ids"><code class="xref py py-func docutils literal notranslate"><span class="pre">enum_ring_ids</span></code></a>.</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">rsuanalyzer</span> <span class="k">as</span> <span class="nn">ra</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">trimeric_rings</span> <span class="o">=</span> <span class="n">ra</span><span class="o">.</span><span class="n">enum_ring_ids</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ra</span><span class="o">.</span><span class="n">create_min_rsu_vs_theta_df</span><span class="p">(</span><span class="n">trimeric_rings</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#     theta   Ring ID       RSU</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 0       0  RLFFRLFF  1.032532</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 1       1  RLFFRLFF  1.021568</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 2       2  RLFFRLFF  1.010608</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 3       3  RLFFRLFF  0.999655</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 4       4  RRFFLLFF  0.988711</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># ..    ...       ...       ...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 86     86  RRFFLLFF  0.405869</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 87     87  RRFFLLFF  0.405200</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 88     88  RLFFRLFF  0.404722</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 89     89  RLFFRLFF  0.404435</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 90     90  RRFFRRFF  0.404339</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># [91 rows x 3 columns]</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>You can plot the result using the function
+<a class="reference internal" href="#rsuanalyzer.analyze_rsu.plot_rsu_vs_theta.plot_rsu_vs_theta" title="rsuanalyzer.analyze_rsu.plot_rsu_vs_theta.plot_rsu_vs_theta"><code class="xref py py-func docutils literal notranslate"><span class="pre">plot_rsu_vs_theta</span></code></a></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-rsuanalyzer.analyze_rsu.calc_rsu_vs_theta">
+<span id="calc-rsu-vs-theta"></span><h2>calc_rsu_vs_theta<a class="headerlink" href="#module-rsuanalyzer.analyze_rsu.calc_rsu_vs_theta" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="rsuanalyzer.analyze_rsu.calc_rsu_vs_theta.create_rsu_vs_theta_df">
+<span class="sig-prename descclassname"><span class="pre">rsuanalyzer.analyze_rsu.calc_rsu_vs_theta.</span></span><span class="sig-name descname"><span class="pre">create_rsu_vs_theta_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ring_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thetas</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">range(0,</span> <span class="pre">91)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta_</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">87</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#rsuanalyzer.analyze_rsu.calc_rsu_vs_theta.create_rsu_vs_theta_df" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the RSU of the given ring for each theta.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ring_id</strong> (<em>str</em>) – The conformation ID of the ring, e.g. “RLFFRLFFRLFF”.</p></li>
+<li><p><strong>thetas</strong> (<em>Iterable</em><em>[</em><em>float</em><em>]</em><em>, </em><em>optional</em>) – The list of tilt angles of C-C bonds. (unit: degree)
+0 &lt;= theta &lt;= 90. Default is range(0, 91, 1).</p></li>
+<li><p><strong>delta</strong> (<em>float</em><em>, </em><em>optional</em>) – N-Pd-N angle. (unit: degree) 0 &lt; delta_ &lt;= 180.
+Default is 87.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">rsuanalyzer</span> <span class="k">as</span> <span class="nn">ra</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ra</span><span class="o">.</span><span class="n">create_rsu_vs_theta_df</span><span class="p">(</span><span class="s2">&quot;RLFFRLFFRLFF&quot;</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># The result will be:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># theta       RSU</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 0      0  0.243351</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 1     10  0.079101</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 2     20  0.062665</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 3     30  0.180018</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 4     40  0.273040</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 5     50  0.343376</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 6     60  0.393650</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 7     70  0.426807</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 8     80  0.445484</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 9     90  0.451495</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>You can plot the result using the function
+<a class="reference internal" href="#rsuanalyzer.analyze_rsu.plot_rsu_vs_theta.plot_rsu_vs_theta" title="rsuanalyzer.analyze_rsu.plot_rsu_vs_theta.plot_rsu_vs_theta"><code class="xref py py-func docutils literal notranslate"><span class="pre">plot_rsu_vs_theta</span></code></a></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-rsuanalyzer.analyze_rsu.plot_rsu_vs_theta">
+<span id="plot-rsu-vs-theta"></span><h2>plot_rsu_vs_theta<a class="headerlink" href="#module-rsuanalyzer.analyze_rsu.plot_rsu_vs_theta" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="rsuanalyzer.analyze_rsu.plot_rsu_vs_theta.plot_rsu_vs_theta">
+<span class="sig-prename descclassname"><span class="pre">rsuanalyzer.analyze_rsu.plot_rsu_vs_theta.</span></span><span class="sig-name descname"><span class="pre">plot_rsu_vs_theta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">dfs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'RSU</span> <span class="pre">vs</span> <span class="pre">tilt</span> <span class="pre">angle</span> <span class="pre">$\\theta$'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlabel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Tilt</span> <span class="pre">angle</span> <span class="pre">$\\theta$</span> <span class="pre">/deg.'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylabel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'RSU'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#rsuanalyzer.analyze_rsu.plot_rsu_vs_theta.plot_rsu_vs_theta" title="Link to this definition">#</a></dt>
+<dd><p>Plot the RSU vs theta.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dfs</strong> (<em>pd.DataFrame</em>) – <p>The pandas DataFrames containing the RSU for each theta.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Columns of the DataFrames should have the names “theta”
+and “RSU”. Other columns will be ignored.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>DataFrames do not nessarily have the same thetas.</p>
+</div>
+</p></li>
+<li><p><strong>labels</strong> (<em>Iterable</em><em>[</em><em>str</em><em>]</em>) – <p>The names of the DataFrames. Default is None.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>labels is keyword-only argument.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If labels is None, the names of the DataFrames will be
+“df1”, “df2”, … in the order of the input.</p>
+</div>
+</p></li>
+<li><p><strong>title</strong> (<em>str</em>) – The title of the plot. Default is
+r”RSU vs tilt angle $       heta$”.</p></li>
+<li><p><strong>xlabel</strong> (<em>str</em>) – The label of the x-axis. Default is
+r”Tilt angle $      heta$ /deg.”.</p></li>
+<li><p><strong>ylabel</strong> (<em>str</em>) – The label of the y-axis. Default is “RSU”.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<dl>
+<dt>Case 1: Plot a single DataFrame</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">rsuanalyzer</span> <span class="k">as</span> <span class="nn">ra</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df1</span> <span class="o">=</span> <span class="n">ra</span><span class="o">.</span><span class="n">create_rsu_vs_theta_df</span><span class="p">(</span><span class="s2">&quot;RLFFRLFFRLFF&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ra</span><span class="o">.</span><span class="n">plot_rsu_vs_theta</span><span class="p">(</span><span class="n">df1</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+<dt>Case 2: Plot multiple DataFrames</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">rsuanalyzer</span> <span class="k">as</span> <span class="nn">ra</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df1</span> <span class="o">=</span> <span class="n">ra</span><span class="o">.</span><span class="n">create_rsu_vs_theta_df</span><span class="p">(</span><span class="s2">&quot;RRFFLLBBRRFFLLBB&quot;</span><span class="p">,</span> <span class="n">delta_</span><span class="o">=</span><span class="mi">87</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df2</span> <span class="o">=</span> <span class="n">ra</span><span class="o">.</span><span class="n">create_rsu_vs_theta_df</span><span class="p">(</span><span class="s2">&quot;RRFFLLBBRRFFLLBB&quot;</span><span class="p">,</span> <span class="n">delta_</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ra</span><span class="o">.</span><span class="n">plot_rsu_vs_theta</span><span class="p">(</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;delta=87&quot;</span><span class="p">,</span> <span class="s2">&quot;delta=90&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-rsuanalyzer.analyze_rsu.small_rsu_ranking">
+<span id="small-rsu-ranking"></span><h2>small_rsu_ranking<a class="headerlink" href="#module-rsuanalyzer.analyze_rsu.small_rsu_ranking" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="rsuanalyzer.analyze_rsu.small_rsu_ranking.create_small_rsu_ranking">
+<span class="sig-prename descclassname"><span class="pre">rsuanalyzer.analyze_rsu.small_rsu_ranking.</span></span><span class="sig-name descname"><span class="pre">create_small_rsu_ranking</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ring_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta_</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">87</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#rsuanalyzer.analyze_rsu.small_rsu_ranking.create_small_rsu_ranking" title="Link to this definition">#</a></dt>
+<dd><p>Make a rank table of RSU in ascending order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ring_ids</strong> (<em>Iterable</em><em>[</em><em>str</em><em>]</em>) – The Iterable of conformation IDs of rings, e.g. “RRFFLLBB”.</p></li>
+<li><p><strong>theta</strong> (<em>float</em>) – The tilt angle of C-C bonds. (unit: degree)
+0 &lt;= theta &lt;= 90.</p></li>
+<li><p><strong>delta</strong> (<em>float</em><em>, </em><em>optional</em>) – N-Pd-N angle. (unit: degree) 0 &lt; delta_ &lt;= 180.
+Default is 87.</p></li>
+<li><p><strong>top_num</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of top-ranked rings. Default is 10.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A pandas DataFrame containing the rank table of RSU.
+The columns are “Ring ID” and “RSU”.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<dl>
+<dt>case 1:</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">rsuanalyzer</span> <span class="k">as</span> <span class="nn">ra</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ra</span><span class="o">.</span><span class="n">create_small_rsu_ranking</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="s2">&quot;RRFFRRFF&quot;</span><span class="p">,</span> <span class="s2">&quot;RRFFLLFF&quot;</span><span class="p">,</span> <span class="s2">&quot;RRFFLLBB&quot;</span><span class="p">],</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">87</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># The result will be:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#        Ring ID       RSU</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Rank</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 1     RRFFLLFF  0.718436</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 2     RRFFLLBB  1.032532</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 3     RRFFRRFF  1.038581</span>
+</pre></div>
+</div>
+</dd>
+<dt>case 2:</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">rsuanalyzer</span> <span class="k">as</span> <span class="nn">ra</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">trimeric_rings</span> <span class="o">=</span> <span class="n">ra</span><span class="o">.</span><span class="n">enum_ring_ids</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ra</span><span class="o">.</span><span class="n">create_small_rsu_ranking</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">trimeric_rings</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># The result will be:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#            Ring ID       RSU</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Rank</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 1     RLFFRLFBLRBF  0.252823</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 2     RLFFRLFFRLFF  0.273040</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 3     RLFFRLFFLRFF  0.302913</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 4     RRFFRLFFLRFB  0.330514</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 5     RRFFLRFFLRFB  0.363424</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="core.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">core</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="enum_ring_ids.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">enum_ring_ids</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-rsuanalyzer.analyze_rsu.calc_min_rsu_vs_theta">calc_min_rsu_vs_theta</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rsuanalyzer.analyze_rsu.calc_min_rsu_vs_theta.create_min_rsu_vs_theta_df"><code class="docutils literal notranslate"><span class="pre">create_min_rsu_vs_theta_df()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-rsuanalyzer.analyze_rsu.calc_rsu_vs_theta">calc_rsu_vs_theta</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rsuanalyzer.analyze_rsu.calc_rsu_vs_theta.create_rsu_vs_theta_df"><code class="docutils literal notranslate"><span class="pre">create_rsu_vs_theta_df()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-rsuanalyzer.analyze_rsu.plot_rsu_vs_theta">plot_rsu_vs_theta</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rsuanalyzer.analyze_rsu.plot_rsu_vs_theta.plot_rsu_vs_theta"><code class="docutils literal notranslate"><span class="pre">plot_rsu_vs_theta()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-rsuanalyzer.analyze_rsu.small_rsu_ranking">small_rsu_ranking</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rsuanalyzer.analyze_rsu.small_rsu_ranking.create_small_rsu_ranking"><code class="docutils literal notranslate"><span class="pre">create_small_rsu_ranking()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/rsuanalyzer/analyze_rsu.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Hiraoka Group, The University of Tokyo.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
