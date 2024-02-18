@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Using the RSU Analyzer &#8212; RSU Project  documentation</title>
+    <title>RSU Analyzer &#8212; RSU Project  documentation</title>
   
   
   
@@ -29,7 +29,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=db01d323" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=f7d5828e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
@@ -146,14 +146,28 @@
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="reprod.html">
-                        Reproducing the Results
+                        Reproducing Results
                       </a>
                     </li>
                 
 
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="#">
-                        Using the RSU Analyzer
+                        RSU Analyzer
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="gallery.html">
+                        Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="appendix.html">
+                        Appendix
                       </a>
                     </li>
                 
@@ -248,14 +262,28 @@ document.write(`
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="reprod.html">
-                        Reproducing the Results
+                        Reproducing Results
                       </a>
                     </li>
                 
 
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="#">
-                        Using the RSU Analyzer
+                        RSU Analyzer
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="gallery.html">
+                        Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="appendix.html">
+                        Appendix
                       </a>
                     </li>
                 
@@ -292,11 +320,11 @@ document.write(`
   <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="rsuanalyzer/instruction.html">General instruction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rsuanalyzer/examples.html">Examples</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="rsuanalyzer/modules.html">Modules</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="rsuanalyzer/core.html">core</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rsuanalyzer/analyze_rsu.html">analyze_rsu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rsuanalyzer/enum_ring_ids.html">enum_ring_ids</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rsuanalyzer/visualize_chain.html">visualize_chain</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="rsuanalyzer/api.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="rsuanalyzer/modules/core.html">For calculating RSU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rsuanalyzer/modules/analyze_rsu.html">For analyzing RSU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rsuanalyzer/modules/enum_ring_ids.html">For enumerating all rings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rsuanalyzer/modules/visualize_chain.html">For visualizing chains</a></li>
 </ul>
 </li>
 </ul>
@@ -336,7 +364,7 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page">Using the...</li>
+    <li class="breadcrumb-item active" aria-current="page">RSU Analyzer</li>
   </ul>
 </nav>
 </div>
@@ -353,18 +381,19 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="using-the-rsu-analyzer">
-<h1>Using the RSU Analyzer<a class="headerlink" href="#using-the-rsu-analyzer" title="Link to this heading">#</a></h1>
+  <section id="rsu-analyzer">
+<h1>RSU Analyzer<a class="headerlink" href="#rsu-analyzer" title="Link to this heading">#</a></h1>
 <div class="toctree-wrapper compound">
 </div>
 <p>This is the documentation for the RSU Analyzer package, which is used in the <a class="reference internal" href="reprod.html"><span class="doc">scripts</span></a>.</p>
 <section id="what-the-rsu-analyzer-can-do">
 <h2>What the RSU Analyzer can do<a class="headerlink" href="#what-the-rsu-analyzer-can-do" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>calculating RSU</p></li>
-<li><p>analyzing RSU (e.g. plot the RSU)</p></li>
-<li><p>visualizing chains</p></li>
+<li><p>Calculating RSU</p></li>
+<li><p>Analyzing RSU (e.g. plot the RSU)</p></li>
+<li><p>Visualizing chains</p></li>
 </ul>
+<p>See <a class="reference internal" href="rsuanalyzer/examples.html"><span class="doc">examples</span></a> for some examples, and <a class="reference internal" href="rsuanalyzer/api.html"><span class="doc">API</span></a> for the detailed API.</p>
 </section>
 <section id="next-step">
 <h2>Next Step<a class="headerlink" href="#next-step" title="Link to this heading">#</a></h2>

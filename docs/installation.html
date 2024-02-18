@@ -29,7 +29,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=db01d323" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=f7d5828e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
@@ -43,7 +43,7 @@
     <link rel="icon" href="_static/favicon.svg"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Reproducing the Results" href="reprod.html" />
+    <link rel="next" title="Reproducing Results" href="reprod.html" />
     <link rel="prev" title="RSU Project" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -146,14 +146,28 @@
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="reprod.html">
-                        Reproducing the Results
+                        Reproducing Results
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="rsuanalyzer.html">
-                        Using the RSU Analyzer
+                        RSU Analyzer
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="gallery.html">
+                        Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="appendix.html">
+                        Appendix
                       </a>
                     </li>
                 
@@ -248,14 +262,28 @@ document.write(`
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="reprod.html">
-                        Reproducing the Results
+                        Reproducing Results
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="rsuanalyzer.html">
-                        Using the RSU Analyzer
+                        RSU Analyzer
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="gallery.html">
+                        Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="appendix.html">
+                        Appendix
                       </a>
                     </li>
                 
@@ -344,43 +372,80 @@ document.write(`
                   
   <section id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The following instructions are for installing the project on a Unix-based system (e.g., Linux, macOS). If you are using a Windows system, please refer to documentation on how to install the project on Windows.</p>
+</div>
 <p>To install the project, follow these steps:</p>
-<ol class="arabic simple">
-<li><p>Clone the repository</p></li>
-</ol>
+<section id="before-you-begin">
+<h2>Before You Begin<a class="headerlink" href="#before-you-begin" title="Link to this heading">#</a></h2>
+<p>Before you install the project, make sure you have the following software installed on your system:</p>
+<ul class="simple">
+<li><p>Python 3.11 or later</p></li>
+<li><p>Git</p></li>
+<li><p>Poetry</p></li>
+</ul>
+<p>If you don’t have any of the above software installed, please refer to the documentation for each software to install it on your system.</p>
+</section>
+<section id="installation-steps">
+<h2>Installation Steps<a class="headerlink" href="#installation-steps" title="Link to this heading">#</a></h2>
+<section id="clone-the-repository">
+<h3>1. Clone the repository<a class="headerlink" href="#clone-the-repository" title="Link to this heading">#</a></h3>
+<p>Navigate to the directory where you want to store the project using the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command, like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>path/to/your/directory
+</pre></div>
+</div>
+<p>Please replace <code class="docutils literal notranslate"><span class="pre">path/to/your/directory</span></code> with the path to the directory where you want to store the project.</p>
+<p>Then, run the following command to clone the repository:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Hiraoka-Group/rsu-project.git
 </pre></div>
 </div>
-<ol class="arabic simple" start="2">
-<li><p>Navigate to the project directory</p></li>
-</ol>
+<p>The above command will create a new directory named <code class="docutils literal notranslate"><span class="pre">rsu-project</span></code> in the directory you specified. This directory will contain the project files.</p>
+</section>
+<section id="create-a-virtual-environment-and-activate-it">
+<h3>2. Create a virtual environment, and activate it.<a class="headerlink" href="#create-a-virtual-environment-and-activate-it" title="Link to this heading">#</a></h3>
+<p>Create a virtual environment to install the project dependencies. You can use the built-in <code class="docutils literal notranslate"><span class="pre">venv</span></code> module to create a virtual environment.</p>
+<p>In this example, we will create a virtual environment named <code class="docutils literal notranslate"><span class="pre">myenv</span></code> in the project root directory (i.e., the <code class="docutils literal notranslate"><span class="pre">rsu-project</span></code> directory).</p>
+<p>Navigate to the project root directory using the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command, like this:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>rsu-project
 </pre></div>
 </div>
-<ol class="arabic simple" start="3">
-<li><p>Create a virtual environment</p></li>
-</ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+<p>Then, run the following command to create a virtual environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>myenv
 </pre></div>
 </div>
-<ol class="arabic simple" start="4">
-<li><p>Activate the virtual environment</p></li>
-</ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+<p>In this example, the virtual environment is named <code class="docutils literal notranslate"><span class="pre">myenv</span></code>. You can replace <code class="docutils literal notranslate"><span class="pre">myenv</span></code> with the name you want to use for the virtual environment.</p>
+<p>The above command will create a new directory named <code class="docutils literal notranslate"><span class="pre">myenv</span></code> in the project directory. This directory will contain the virtual environment files.</p>
+<p>Activate the virtual environment by running the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>myenv/bin/activate
 </pre></div>
 </div>
-<ol class="arabic simple" start="5">
-<li><p>Install poetry, if you don’t have it already</p></li>
-</ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>poetry
+<p>After running the above command, you should see <code class="docutils literal notranslate"><span class="pre">(myenv)</span></code> at the beginning of the command prompt. This indicates that the virtual environment is activated. For example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>myenv<span class="o">)</span><span class="w"> </span>user@hostname<span class="w"> </span>rsu-project<span class="w"> </span>%
 </pre></div>
 </div>
-<ol class="arabic simple" start="6">
-<li><p>Install the project dependencies</p></li>
-</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you want to deactivate the virtual environment, run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>deactivate
+</pre></div>
+</div>
+<p>After running the above command, you should see the virtual environment name at the beginning of the command prompt disappear. For example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>user@hostname<span class="w"> </span>rsu-project<span class="w"> </span>%
+</pre></div>
+</div>
+<p>This indicates that the virtual environment is deactivated.</p>
+</div>
+</section>
+<section id="install-the-project-dependencies">
+<h3>3. Install the project dependencies<a class="headerlink" href="#install-the-project-dependencies" title="Link to this heading">#</a></h3>
+<p>Make sure the virtual environment is activated, and then run the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>install
 </pre></div>
 </div>
+<p>The above command will install the project dependencies in the virtual environment.</p>
+</section>
+</section>
 <section id="next-steps">
 <h2>Next Steps<a class="headerlink" href="#next-steps" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -414,7 +479,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Reproducing the Results</p>
+        <p class="prev-next-title">Reproducing Results</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -436,6 +501,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#before-you-begin">Before You Begin</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-steps">Installation Steps</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clone-the-repository">1. Clone the repository</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-virtual-environment-and-activate-it">2. Create a virtual environment, and activate it.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-the-project-dependencies">3. Install the project dependencies</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">Next Steps</a></li>
 </ul>
   </nav></div>

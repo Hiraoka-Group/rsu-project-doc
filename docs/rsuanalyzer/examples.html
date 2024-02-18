@@ -29,7 +29,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=db01d323" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=f7d5828e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
@@ -43,7 +43,7 @@
     <link rel="icon" href="../_static/favicon.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Modules" href="modules.html" />
+    <link rel="next" title="API Reference" href="api.html" />
     <link rel="prev" title="General instruction" href="instruction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -146,14 +146,28 @@
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../reprod.html">
-                        Reproducing the Results
+                        Reproducing Results
                       </a>
                     </li>
                 
 
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="../rsuanalyzer.html">
-                        Using the RSU Analyzer
+                        RSU Analyzer
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../gallery.html">
+                        Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../appendix.html">
+                        Appendix
                       </a>
                     </li>
                 
@@ -248,14 +262,28 @@ document.write(`
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../reprod.html">
-                        Reproducing the Results
+                        Reproducing Results
                       </a>
                     </li>
                 
 
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="../rsuanalyzer.html">
-                        Using the RSU Analyzer
+                        RSU Analyzer
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../gallery.html">
+                        Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../appendix.html">
+                        Appendix
                       </a>
                     </li>
                 
@@ -292,11 +320,11 @@ document.write(`
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="instruction.html">General instruction</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Examples</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="modules.html">Modules</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="core.html">core</a></li>
-<li class="toctree-l2"><a class="reference internal" href="analyze_rsu.html">analyze_rsu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="enum_ring_ids.html">enum_ring_ids</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualize_chain.html">visualize_chain</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules/core.html">For calculating RSU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/analyze_rsu.html">For analyzing RSU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/enum_ring_ids.html">For enumerating all rings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/visualize_chain.html">For visualizing chains</a></li>
 </ul>
 </li>
 </ul>
@@ -337,7 +365,7 @@ document.write(`
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="../rsuanalyzer.html" class="nav-link">Using the RSU Analyzer</a></li>
+    <li class="breadcrumb-item"><a href="../rsuanalyzer.html" class="nav-link">RSU Analyzer</a></li>
     
     <li class="breadcrumb-item active" aria-current="page">Examples</li>
   </ul>
@@ -359,6 +387,7 @@ document.write(`
   <section id="examples">
 <h1>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h1>
 <p>Here are some examples of how to use the package.</p>
+<p>If you don’t know how to execute the code, please refer to the <a class="reference internal" href="instruction.html"><span class="doc">general instruction</span></a>.</p>
 <section id="calculate-rsu">
 <h2>1. Calculate RSU<a class="headerlink" href="#calculate-rsu" title="Link to this heading">#</a></h2>
 <p>To calculate the RSU, you can use the following code:</p>
@@ -376,7 +405,10 @@ document.write(`
 <p>In this example, the RSU of the trimeric ring “RLFFRLFFRLFF” with theta of 34 degrees is calculated. Delta is set to 87 degrees by default, but you can change it by specifying the delta argument, e.g., <code class="code highlight python docutils literal highlight-python"><span class="n">ra</span><span class="o">.</span><span class="n">calc_rsu</span><span class="p">(</span><span class="s2">&quot;RLFFRLFFRLFF&quot;</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span></code>.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p>For more information, please refer to the documentation of the function. <a class="reference internal" href="core.html#rsuanalyzer.core.calc_rsu.calc_rsu" title="rsuanalyzer.core.calc_rsu.calc_rsu"><code class="xref py py-func docutils literal notranslate"><span class="pre">rsuanalyzer.core.calc_rsu.calc_rsu()</span></code></a></p>
+<p>See the documentation of the function for more information.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="modules/core.html#rsuanalyzer.core.calc_rsu.calc_rsu" title="rsuanalyzer.core.calc_rsu.calc_rsu"><code class="xref py py-func docutils literal notranslate"><span class="pre">rsuanalyzer.calc_rsu</span></code></a></p></li>
+</ul>
 </div>
 </section>
 <section id="make-a-ranking">
@@ -429,8 +461,8 @@ document.write(`
 <p class="admonition-title">See also</p>
 <p>See the documentation of the functions for more information.</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="analyze_rsu.html#rsuanalyzer.analyze_rsu.small_rsu_ranking.create_small_rsu_ranking" title="rsuanalyzer.analyze_rsu.small_rsu_ranking.create_small_rsu_ranking"><code class="xref py py-func docutils literal notranslate"><span class="pre">rsuanalyzer.create_small_rsu_ranking</span></code></a></p></li>
-<li><p><a class="reference internal" href="enum_ring_ids.html#rsuanalyzer.enum_ring_ids.enum_ring_ids.enum_ring_ids" title="rsuanalyzer.enum_ring_ids.enum_ring_ids.enum_ring_ids"><code class="xref py py-func docutils literal notranslate"><span class="pre">rsuanalyzer.enum_ring_ids</span></code></a></p></li>
+<li><p><a class="reference internal" href="modules/analyze_rsu.html#rsuanalyzer.analyze_rsu.small_rsu_ranking.create_small_rsu_ranking" title="rsuanalyzer.analyze_rsu.small_rsu_ranking.create_small_rsu_ranking"><code class="xref py py-func docutils literal notranslate"><span class="pre">rsuanalyzer.create_small_rsu_ranking</span></code></a></p></li>
+<li><p><a class="reference internal" href="modules/enum_ring_ids.html#rsuanalyzer.enum_ring_ids.enum_ring_ids.enum_ring_ids" title="rsuanalyzer.enum_ring_ids.enum_ring_ids.enum_ring_ids"><code class="xref py py-func docutils literal notranslate"><span class="pre">rsuanalyzer.enum_ring_ids</span></code></a></p></li>
 </ul>
 </div>
 </section>
@@ -450,10 +482,10 @@ document.write(`
 <img alt="../_images/rsu_vs_theta_of_syn-T-1.png" class="align-center" src="../_images/rsu_vs_theta_of_syn-T-1.png" />
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p>For more information, please refer to the documentation of the functions.</p>
+<p>See the documentation of the functions for more information.</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="analyze_rsu.html#rsuanalyzer.analyze_rsu.calc_rsu_vs_theta.create_rsu_vs_theta_df" title="rsuanalyzer.analyze_rsu.calc_rsu_vs_theta.create_rsu_vs_theta_df"><code class="xref py py-func docutils literal notranslate"><span class="pre">rsuanalyzer.create_rsu_vs_theta_df</span></code></a></p></li>
-<li><p><a class="reference internal" href="analyze_rsu.html#rsuanalyzer.analyze_rsu.plot_rsu_vs_theta.plot_rsu_vs_theta" title="rsuanalyzer.analyze_rsu.plot_rsu_vs_theta.plot_rsu_vs_theta"><code class="xref py py-func docutils literal notranslate"><span class="pre">rsuanalyzer.plot_rsu_vs_theta</span></code></a></p></li>
+<li><p><a class="reference internal" href="modules/analyze_rsu.html#rsuanalyzer.analyze_rsu.calc_rsu_vs_theta.create_rsu_vs_theta_df" title="rsuanalyzer.analyze_rsu.calc_rsu_vs_theta.create_rsu_vs_theta_df"><code class="xref py py-func docutils literal notranslate"><span class="pre">rsuanalyzer.create_rsu_vs_theta_df</span></code></a></p></li>
+<li><p><a class="reference internal" href="modules/analyze_rsu.html#rsuanalyzer.analyze_rsu.plot_rsu_vs_theta.plot_rsu_vs_theta" title="rsuanalyzer.analyze_rsu.plot_rsu_vs_theta.plot_rsu_vs_theta"><code class="xref py py-func docutils literal notranslate"><span class="pre">rsuanalyzer.plot_rsu_vs_theta</span></code></a></p></li>
 </ul>
 </div>
 </section>
@@ -470,7 +502,8 @@ document.write(`
 <img alt="../_images/visualized_syn-S-1.png" class="align-center" src="../_images/visualized_syn-S-1.png" />
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="visualize_chain.html#rsuanalyzer.visualize_chain.visualize_chain.visualize_chain" title="rsuanalyzer.visualize_chain.visualize_chain.visualize_chain"><code class="xref py py-func docutils literal notranslate"><span class="pre">rsuanalyzer.visualize_chain</span></code></a></p>
+<p>See the documentation of the functions for more information.</p>
+<p><a class="reference internal" href="modules/visualize_chain.html#rsuanalyzer.visualize_chain.visualize_chain.visualize_chain" title="rsuanalyzer.visualize_chain.visualize_chain.visualize_chain"><code class="xref py py-func docutils literal notranslate"><span class="pre">rsuanalyzer.visualize_chain</span></code></a></p>
 </div>
 </section>
 </section>
@@ -495,11 +528,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="modules.html"
+       href="api.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Modules</p>
+        <p class="prev-next-title">API Reference</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

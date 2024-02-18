@@ -29,7 +29,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=db01d323" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=f7d5828e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
@@ -43,7 +43,7 @@
     <link rel="icon" href="../_static/favicon.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Using the RSU Analyzer" href="../rsuanalyzer.html" />
+    <link rel="next" title="RSU Analyzer" href="../rsuanalyzer.html" />
     <link rel="prev" title="Script 4" href="script4.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -146,14 +146,28 @@
 
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="../reprod.html">
-                        Reproducing the Results
+                        Reproducing Results
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../rsuanalyzer.html">
-                        Using the RSU Analyzer
+                        RSU Analyzer
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../gallery.html">
+                        Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../appendix.html">
+                        Appendix
                       </a>
                     </li>
                 
@@ -248,14 +262,28 @@ document.write(`
 
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="../reprod.html">
-                        Reproducing the Results
+                        Reproducing Results
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../rsuanalyzer.html">
-                        Using the RSU Analyzer
+                        RSU Analyzer
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../gallery.html">
+                        Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../appendix.html">
+                        Appendix
                       </a>
                     </li>
                 
@@ -333,7 +361,7 @@ document.write(`
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="../reprod.html" class="nav-link">Reproducing the Results</a></li>
+    <li class="breadcrumb-item"><a href="../reprod.html" class="nav-link">Reproducing Results</a></li>
     
     <li class="breadcrumb-item active" aria-current="page">Script 5</li>
   </ul>
@@ -354,7 +382,8 @@ document.write(`
                   
   <section id="script-5">
 <h1>Script 5<a class="headerlink" href="#script-5" title="Link to this heading">#</a></h1>
-<p>This script reproduces the following figure from the paper:</p>
+<section id="result">
+<h2>Result<a class="headerlink" href="#result" title="Link to this heading">#</a></h2>
 <p>RSU vs. theta plot for the following rings:</p>
 <ul class="simple">
 <li><p>syn-S-2</p></li>
@@ -362,18 +391,25 @@ document.write(`
 <li><p>syn-T-1</p></li>
 <li><p>minimum RSU of dimeric rings</p></li>
 </ul>
-<section id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading">#</a></h2>
-<p>Before running the script, make sure your current working directory is the <cite>reprod</cite> directory.</p>
-<p>Then run the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>script5.py
+<img alt="../_images/script5.png" class="align-center" src="../_images/script5.png" />
+</section>
+<section id="how-to-run-the-script">
+<h2>How to run the script?<a class="headerlink" href="#how-to-run-the-script" title="Link to this heading">#</a></h2>
+<section id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>If you haven’t installed the package yet, install it by following the instructions in the <a class="reference internal" href="../installation.html"><span class="doc">installation guide</span></a>.</p></li>
+<li><p>If the virtual environment is not activated, activate it. (For more information see <a class="reference internal" href="../appendix/venv.html"><span class="doc">About Virtual Environment</span></a>)</p></li>
+</ul>
+</section>
+<section id="running-the-script">
+<h3>Running the script<a class="headerlink" href="#running-the-script" title="Link to this heading">#</a></h3>
+<p>Go to the directory where the script is located (<code class="docutils literal notranslate"><span class="pre">rsu-project/reprod</span></code>) and run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>script5.py
 </pre></div>
 </div>
+<p>Another window will pop up, showing a plot like the one in the figure above. The plot will be interactive, so you can zoom in, pan, etc.</p>
 </section>
-<section id="result">
-<h2>Result<a class="headerlink" href="#result" title="Link to this heading">#</a></h2>
-<p>Another window will pop up, showing a plot like the following:</p>
-<img alt="../_images/script5.png" class="align-center" src="../_images/script5.png" />
 </section>
 <section id="source-code">
 <h2>Source code<a class="headerlink" href="#source-code" title="Link to this heading">#</a></h2>
@@ -397,6 +433,16 @@ document.write(`
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For further details about the functions used in this script, please refer to the documentation:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../rsuanalyzer/modules/analyze_rsu.html#rsuanalyzer.analyze_rsu.calc_rsu_vs_theta.create_rsu_vs_theta_df" title="rsuanalyzer.analyze_rsu.calc_rsu_vs_theta.create_rsu_vs_theta_df"><code class="xref py py-func docutils literal notranslate"><span class="pre">rsuanalyzer.create_rsu_vs_theta_df</span></code></a></p></li>
+<li><p><a class="reference internal" href="../rsuanalyzer/modules/enum_ring_ids.html#module-rsuanalyzer.enum_ring_ids.enum_ring_ids" title="rsuanalyzer.enum_ring_ids.enum_ring_ids"><code class="xref py py-func docutils literal notranslate"><span class="pre">rsuanalyzer.enum_ring_ids</span></code></a></p></li>
+<li><p><a class="reference internal" href="../rsuanalyzer/modules/analyze_rsu.html#rsuanalyzer.analyze_rsu.calc_min_rsu_vs_theta.create_min_rsu_vs_theta_df" title="rsuanalyzer.analyze_rsu.calc_min_rsu_vs_theta.create_min_rsu_vs_theta_df"><code class="xref py py-func docutils literal notranslate"><span class="pre">rsuanalyzer.create_min_rsu_vs_theta_df</span></code></a></p></li>
+<li><p><a class="reference internal" href="../rsuanalyzer/modules/analyze_rsu.html#rsuanalyzer.analyze_rsu.plot_rsu_vs_theta.plot_rsu_vs_theta" title="rsuanalyzer.analyze_rsu.plot_rsu_vs_theta.plot_rsu_vs_theta"><code class="xref py py-func docutils literal notranslate"><span class="pre">rsuanalyzer.plot_rsu_vs_theta</span></code></a></p></li>
+</ul>
 </div>
 </section>
 </section>
@@ -425,7 +471,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Using the RSU Analyzer</p>
+        <p class="prev-next-title">RSU Analyzer</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -447,8 +493,12 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#result">Result</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-run-the-script">How to run the script?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-script">Running the script</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#source-code">Source code</a></li>
 </ul>
   </nav></div>

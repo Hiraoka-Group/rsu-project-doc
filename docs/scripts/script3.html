@@ -29,7 +29,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=db01d323" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=f7d5828e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
@@ -147,14 +147,28 @@
 
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="../reprod.html">
-                        Reproducing the Results
+                        Reproducing Results
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../rsuanalyzer.html">
-                        Using the RSU Analyzer
+                        RSU Analyzer
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../gallery.html">
+                        Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../appendix.html">
+                        Appendix
                       </a>
                     </li>
                 
@@ -249,14 +263,28 @@ document.write(`
 
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="../reprod.html">
-                        Reproducing the Results
+                        Reproducing Results
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../rsuanalyzer.html">
-                        Using the RSU Analyzer
+                        RSU Analyzer
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../gallery.html">
+                        Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../appendix.html">
+                        Appendix
                       </a>
                     </li>
                 
@@ -334,7 +362,7 @@ document.write(`
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="../reprod.html" class="nav-link">Reproducing the Results</a></li>
+    <li class="breadcrumb-item"><a href="../reprod.html" class="nav-link">Reproducing Results</a></li>
     
     <li class="breadcrumb-item active" aria-current="page">Script 3</li>
   </ul>
@@ -355,8 +383,9 @@ document.write(`
                   
   <section id="script-3">
 <h1>Script 3<a class="headerlink" href="#script-3" title="Link to this heading">#</a></h1>
-<p>This script reproduces the following results from the paper:</p>
-<p>RSU values for the folllowing rings:</p>
+<section id="result">
+<h2>Result<a class="headerlink" href="#result" title="Link to this heading">#</a></h2>
+<p>Table of the calculated RSU values for the different ring conformations of the Pd6L4, Pd9L6 and Pd12L8 complexes.</p>
 <ul class="simple">
 <li><p>syn-T-1  (<span class="math notranslate nohighlight">\(\theta\)</span> = 0°)</p></li>
 <li><p>1,3-alt-S  (<span class="math notranslate nohighlight">\(\theta\)</span> = 0°)</p></li>
@@ -364,17 +393,6 @@ document.write(`
 <li><p>syn-S-2  (<span class="math notranslate nohighlight">\(\theta\)</span> = 30°)</p></li>
 <li><p>syn-S-1  (<span class="math notranslate nohighlight">\(\theta\)</span> = 38°)</p></li>
 </ul>
-<section id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading">#</a></h2>
-<p>Before running the script, make sure your current working directory is the <cite>reprod</cite> directory.</p>
-<p>Then run the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>script3.py
-</pre></div>
-</div>
-</section>
-<section id="result">
-<h2>Result<a class="headerlink" href="#result" title="Link to this heading">#</a></h2>
-<p>csv file with the following content:</p>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>name</p></th>
@@ -418,6 +436,32 @@ document.write(`
 </tbody>
 </table>
 </section>
+<section id="how-to-run-the-script">
+<h2>How to run the script?<a class="headerlink" href="#how-to-run-the-script" title="Link to this heading">#</a></h2>
+<section id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>If you haven’t installed the package yet, install it by following the instructions in the <a class="reference internal" href="../installation.html"><span class="doc">installation guide</span></a>.</p></li>
+<li><p>If the virtual environment is not activated, activate it. (For more information see <a class="reference internal" href="../appendix/venv.html"><span class="doc">About Virtual Environment</span></a>)</p></li>
+</ul>
+</section>
+<section id="running-the-script">
+<h3>Running the script<a class="headerlink" href="#running-the-script" title="Link to this heading">#</a></h3>
+<p>Go to the directory where the script is located (<code class="docutils literal notranslate"><span class="pre">rsu-project/reprod</span></code>) and run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>script3.py
+</pre></div>
+</div>
+<p>This will show the following output:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>         name           ring_id  theta    rsu                         description
+0    syn-T-1      RLFFRLFFRLFF      0  0.243  three membered ring in Pd6L4 (L=1)
+1  1,3-alt-S  RRFFRRBBRRFFRRBB      0  0.284   four membered ring in Pd6L4 (L=1)
+2    syn-T-1      RLFFRLFFRLFF     34  0.220  three membered ring in Pd9L6 (L=2)
+3    syn-S-2  RRFBRLBBRRFBRLBB     30  0.470   four membered ring in Pd9L6 (L=2)
+4    syn-S-1  RRFFLLBBRRFFLLBB     38  0.010  four membered ring in Pd12L8 (L=2)
+</pre></div>
+</div>
+</section>
+</section>
 <section id="source-code">
 <h2>Source code<a class="headerlink" href="#source-code" title="Link to this heading">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -443,13 +487,20 @@ document.write(`
     <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">ring_id</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">description</span> <span class="ow">in</span> <span class="n">rings</span><span class="p">:</span>
         <span class="n">rsu</span> <span class="o">=</span> <span class="n">ra</span><span class="o">.</span><span class="n">calc_rsu</span><span class="p">(</span><span class="n">ring_id</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span>
         <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[</span><span class="n">name</span><span class="p">,</span> <span class="n">ring_id</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">rsu</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">description</span><span class="p">]</span>
-    
-    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;script3.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For further details about the functions used in this script, please refer to the documentation:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../rsuanalyzer/modules/core.html#rsuanalyzer.core.calc_rsu.calc_rsu" title="rsuanalyzer.core.calc_rsu.calc_rsu"><code class="xref py py-func docutils literal notranslate"><span class="pre">rsuanalyzer.calc_rsu</span></code></a></p></li>
+</ul>
 </div>
 </section>
 </section>
@@ -500,8 +551,12 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#result">Result</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-run-the-script">How to run the script?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-script">Running the script</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#source-code">Source code</a></li>
 </ul>
   </nav></div>

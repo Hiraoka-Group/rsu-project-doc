@@ -29,7 +29,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=db01d323" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=f7d5828e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
@@ -44,7 +44,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Examples" href="examples.html" />
-    <link rel="prev" title="Using the RSU Analyzer" href="../rsuanalyzer.html" />
+    <link rel="prev" title="RSU Analyzer" href="../rsuanalyzer.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -146,14 +146,28 @@
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../reprod.html">
-                        Reproducing the Results
+                        Reproducing Results
                       </a>
                     </li>
                 
 
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="../rsuanalyzer.html">
-                        Using the RSU Analyzer
+                        RSU Analyzer
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../gallery.html">
+                        Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../appendix.html">
+                        Appendix
                       </a>
                     </li>
                 
@@ -248,14 +262,28 @@ document.write(`
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../reprod.html">
-                        Reproducing the Results
+                        Reproducing Results
                       </a>
                     </li>
                 
 
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="../rsuanalyzer.html">
-                        Using the RSU Analyzer
+                        RSU Analyzer
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../gallery.html">
+                        Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../appendix.html">
+                        Appendix
                       </a>
                     </li>
                 
@@ -292,11 +320,11 @@ document.write(`
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">General instruction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="modules.html">Modules</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="core.html">core</a></li>
-<li class="toctree-l2"><a class="reference internal" href="analyze_rsu.html">analyze_rsu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="enum_ring_ids.html">enum_ring_ids</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualize_chain.html">visualize_chain</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules/core.html">For calculating RSU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/analyze_rsu.html">For analyzing RSU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/enum_ring_ids.html">For enumerating all rings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/visualize_chain.html">For visualizing chains</a></li>
 </ul>
 </li>
 </ul>
@@ -337,7 +365,7 @@ document.write(`
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="../rsuanalyzer.html" class="nav-link">Using the RSU Analyzer</a></li>
+    <li class="breadcrumb-item"><a href="../rsuanalyzer.html" class="nav-link">RSU Analyzer</a></li>
     
     <li class="breadcrumb-item active" aria-current="page">General instruction</li>
   </ul>
@@ -358,6 +386,126 @@ document.write(`
                   
   <section id="general-instruction">
 <h1>General instruction<a class="headerlink" href="#general-instruction" title="Link to this heading">#</a></h1>
+<p>There are mainly two ways to use the RSU Analyzer package:</p>
+<ol class="arabic simple">
+<li><p>Use the Python interactive mode</p></li>
+<li><p>Make a Python script and run it</p></li>
+</ol>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
+<p>In both cases, you need to have the following prerequisites:</p>
+<ul class="simple">
+<li><p>If you haven’t installed the package yet, install it by following the instructions in the <a class="reference internal" href="../installation.html"><span class="doc">installation guide</span></a>.</p></li>
+<li><p>If the virtual environment is not activated, activate it. (For more information see <a class="reference internal" href="../appendix/venv.html"><span class="doc">About Virtual Environment</span></a>)</p></li>
+</ul>
+</section>
+<section id="use-the-python-interactive-mode">
+<h2>1. Use the Python interactive mode<a class="headerlink" href="#use-the-python-interactive-mode" title="Link to this heading">#</a></h2>
+<section id="introduction-to-python-interactive-mode">
+<h3>Introduction to Python interactive mode<a class="headerlink" href="#introduction-to-python-interactive-mode" title="Link to this heading">#</a></h3>
+<p>If you are already familiar with Python, you can skip this section.</p>
+<p>In this mode, you can directly type the Python commands in the terminal and see the results immediately.</p>
+<p>Open a terminal and execute the command <code class="code docutils literal notranslate"><span class="pre">python3</span></code> to start the Python interactive mode.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>%<span class="w"> </span>python3
+...<span class="w"> </span>some<span class="w"> </span>messages<span class="w"> </span>from<span class="w"> </span>Python<span class="w"> </span>...
+&gt;&gt;&gt;
+</pre></div>
+</div>
+<p>The prompt <code class="code docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code> indicates that Python is ready to accept your commands. You can type the Python commands and see the results immediately.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;<span class="w"> </span><span class="m">1</span><span class="w"> </span>+<span class="w"> </span><span class="m">1</span>
+<span class="m">2</span>
+&gt;&gt;&gt;<span class="w"> </span>sum<span class="o">([</span><span class="m">1</span>,<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="m">3</span>,<span class="w"> </span><span class="m">4</span>,<span class="w"> </span><span class="m">5</span><span class="o">])</span>
+<span class="m">15</span>
+</pre></div>
+</div>
+<p>To exit the Python interactive mode, type <code class="code docutils literal notranslate"><span class="pre">exit()</span></code> or press <code class="code docutils literal notranslate"><span class="pre">Ctrl-D</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;<span class="w"> </span>exit<span class="o">()</span>
+%
+</pre></div>
+</div>
+</section>
+<section id="use-the-rsu-analyzer-package-in-the-python-interactive-mode">
+<h3>Use the RSU Analyzer package in the Python interactive mode<a class="headerlink" href="#use-the-rsu-analyzer-package-in-the-python-interactive-mode" title="Link to this heading">#</a></h3>
+<p>Navigate to the <code class="docutils literal notranslate"><span class="pre">rsu-project/reprod</span></code> directory, where the <code class="docutils literal notranslate"><span class="pre">rsuanalyzer</span></code> package is located.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>%<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>path/to/rsu-project/reprod
+</pre></div>
+</div>
+<p>Please replace <code class="code docutils literal notranslate"><span class="pre">path/to/rsu-project</span></code> with the actual path to the <code class="docutils literal notranslate"><span class="pre">rsu-project</span></code> directory.</p>
+<p>Start the Python interactive mode.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>%<span class="w"> </span>python3
+...<span class="w"> </span>some<span class="w"> </span>messages<span class="w"> </span>from<span class="w"> </span>Python<span class="w"> </span>...
+&gt;&gt;&gt;
+</pre></div>
+</div>
+<p>Import the <code class="docutils literal notranslate"><span class="pre">rsuanalyzer</span></code> package.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">rsuanalyzer</span> <span class="k">as</span> <span class="nn">ra</span>
+</pre></div>
+</div>
+<p>This will import the package and make it available as the variable <code class="code docutils literal notranslate"><span class="pre">ra</span></code>.</p>
+<p>Now you can use the package by typing the commands, for example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ra</span><span class="o">.</span><span class="n">calc_rsu</span><span class="p">(</span><span class="s2">&quot;RLFFRLFFRLFF&quot;</span><span class="p">,</span> <span class="mi">34</span><span class="p">)</span>
+<span class="go">0.2200836694739778</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ra</span><span class="o">.</span><span class="n">visualize_chain</span><span class="p">(</span><span class="s2">&quot;RLFFRLFFRLFF&quot;</span><span class="p">,</span> <span class="mi">34</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This second command will open a window and show the visualization of the RSU chain.</p>
+<p>When you are done, you can exit the Python interactive mode by typing <code class="code docutils literal notranslate"><span class="pre">exit()</span></code> or pressing <code class="code docutils literal notranslate"><span class="pre">Ctrl-D</span></code>.</p>
+<p>Variables you define in the interactive mode will be lost when you exit the Python interactive mode. If you want to keep the results, you should save them in a file or use the second method.</p>
+</section>
+</section>
+<section id="make-a-python-script-and-run-it">
+<h2>2. Make a Python script and run it<a class="headerlink" href="#make-a-python-script-and-run-it" title="Link to this heading">#</a></h2>
+<section id="create-a-python-script-file">
+<h3>Create a Python script file<a class="headerlink" href="#create-a-python-script-file" title="Link to this heading">#</a></h3>
+<p>First, create a new Python script file, for example, <code class="code docutils literal notranslate"><span class="pre">my_script.py</span></code>.
+The file can be located anywhere on your computer.</p>
+<p>Open the file with a text editor or an integrated development environment (IDE) and write the Python commands in the file.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">my_script.py</span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="c1"># Add the path to the rsuanalyzer package to the sys.path</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;path/to/rsu-project/reprod&quot;</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">rsuanalyzer</span> <span class="k">as</span> <span class="nn">ra</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">ra</span><span class="o">.</span><span class="n">calc_rsu</span><span class="p">(</span><span class="s2">&quot;RLFFRLFFRLFF&quot;</span><span class="p">,</span> <span class="mi">34</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<p>Please replace <code class="code docutils literal notranslate"><span class="pre">path/to/rsu-project</span></code> with the actual path to the <code class="docutils literal notranslate"><span class="pre">rsu-project</span></code> directory.</p>
+<p>The first three lines are used to add the path to the <code class="docutils literal notranslate"><span class="pre">rsuanalyzer</span></code> package to the <code class="code docutils literal notranslate"><span class="pre">sys.path</span></code> so that Python can find the package.</p>
+</section>
+<section id="run-the-python-script">
+<h3>Run the Python script<a class="headerlink" href="#run-the-python-script" title="Link to this heading">#</a></h3>
+<p>Open a terminal and navigate to the directory where the Python script file is located.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>path/to/directory/where/my_script.py/is/located
+</pre></div>
+</div>
+<p>Please replace <code class="code docutils literal notranslate"><span class="pre">path/to/directory/where/my_script.py/is/located</span></code> with the actual path to the directory where the Python script file is located.</p>
+<p>Start the Python interpreter and run the script.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>my_script.py
+</pre></div>
+</div>
+<p>This will execute the commands in the script file and show the results in the terminal.
+It looks like this:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>% python3 my_script.py
+0.2200836694739778
+</pre></div>
+</div>
+</section>
+</section>
+<section id="next-steps">
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Some examples of how to use the RSU Analyzer package are provided in the <a class="reference internal" href="examples.html"><span class="doc">examples</span></a> section.</p></li>
+<li><p>For more information about the functions in the package, see the <a class="reference internal" href="api.html"><span class="doc">API reference</span></a> section.</p></li>
+</ul>
+</section>
 </section>
 
 
@@ -376,7 +524,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Using the RSU Analyzer</p>
+        <p class="prev-next-title">RSU Analyzer</p>
       </div>
     </a>
     <a class="right-next"
@@ -397,6 +545,29 @@ document.write(`
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-the-python-interactive-mode">1. Use the Python interactive mode</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-python-interactive-mode">Introduction to Python interactive mode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-the-rsu-analyzer-package-in-the-python-interactive-mode">Use the RSU Analyzer package in the Python interactive mode</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-a-python-script-and-run-it">2. Make a Python script and run it</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-python-script-file">Create a Python script file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-python-script">Run the Python script</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">Next steps</a></li>
+</ul>
+  </nav></div>
 
   <div class="sidebar-secondary-item">
 
