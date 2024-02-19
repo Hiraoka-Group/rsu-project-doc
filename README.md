@@ -1,2 +1,2 @@
-# rsuanalyzer-doc
- Documentation for the RSU Analyzer
+# rsu-project-doc
+ Documentation for the RSU Project
